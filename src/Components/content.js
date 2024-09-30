@@ -4,7 +4,7 @@ const Content = () => { //this is a functional component named Content that retu
   return ( //this is the return statement that returns the JSX code
     <div> 
       <h1>Hello World!</h1>  
-      <h2>It is {new Date().toLocaleTimeString()}</h2> 
+      <h2>It is {new Date().toLocaleTimeString()}</h2>  
     </div>
   );
 }
