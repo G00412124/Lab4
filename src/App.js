@@ -9,18 +9,18 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 
 
-function App() {
-  return (
+function App() { //this is the App component that returns the JSX code 
+  return ( //this is the return statement that returns the JSX code
     <Router>
-      <NavigationBar />
+      <NavigationBar />  {/*//this is the NavigationBar component ,*/}
       <Routes>
-        <Route path="/home" element={<Content />} />
-        <Route path="/read" element={<h1>Read Component</h1>} />
-        <Route path="/create" element={<h1>Create Component</h1>} />
+        <Route path="/home" element={<Content />} />   {/*//this is the route for the Content component*/}
+        <Route path="/read" element={<h1>Read Component</h1>} /> {/*//this is the route for the Read component*/}
+        <Route path="/create" element={<h1>Create Component</h1>} /> {/*//this is the route for the Create component*/}	
       </Routes>
       <Footer />
     </Router>
   );
 }
 
-export default App;
+export default App; //this exports the App component so it can be imported in other files
