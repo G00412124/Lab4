@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 
 const Movies = (props) => { //this is the Movies component that returns the JSX code
-    
+
   return ( //this is the return statement that returns the JSX code
     <div>
       <h1>Movies</h1> {/*//this is the title of the Movies component*/}
@@ -16,21 +16,21 @@ const Movies = (props) => { //this is the Movies component that returns the JSX 
             <Grid item key={movie.imdbID} xs={12} sm={6} md={4}>
               <Card>
                 <CardMedia
-                  component="img"
+                  component="img" //this is the component of the Card
                   height="500"
-                  image={movie.Poster}
+                  image={movie.Poster} //this is the Poster of the movie
                   alt="Movie Poster"
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="div">
                     {movie.Title}
-                  </Typography>
+                  </Typography> {/*this is the closing Typography component*/}
                   <Typography variant="body2" color="text.secondary">
                     {movie.Year}
-                  </Typography>
+                  </Typography> {/*this is the closing Typography component*/}
                 </CardContent>
               </Card>
-            </Grid>
+            </Grid> //this is the closing Grid component
           );
         })}
       </Grid>

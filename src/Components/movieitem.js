@@ -6,22 +6,22 @@ import Typography from '@mui/material/Typography';
 
 const MovieItem = (props) => { //this is a functional component called MovieItem
   return (
-    <Card sx={{ maxWidth: 345, margin: '16px auto' }}>
+    <Card sx={{ maxWidth: 345, margin: '16px auto' }}> {/*this is the Card component that contains the movie details*/}
       <CardMedia
-        component="img"
-        height="500"
-        image={props.movie.Poster}
+        component="img" //this is the component of the Card
+        height="500" //this is the height of the Card
+        image={props.movie.Poster} //this is the Poster of the movie
         alt="Movie Poster"
       />
       <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
+        <Typography gutterBottom variant="h5" component="div"> {/*this is the title of the movie*/}
           {props.movie.Title}
         </Typography>
-        <Typography variant="body2" color="text.secondary">
+        <Typography variant="body2" color="text.secondary"> {/*this is the year the movie was released*/}
           {props.movie.Year}
-        </Typography>
+        </Typography> {/*this is the closing Typography component*/}
       </CardContent>
-    </Card>
+    </Card> //this is the closing Card component
   );
 }
 
