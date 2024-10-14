@@ -1,41 +1,11 @@
-import React from 'react';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import Grid from '@mui/material/Grid';
+import MovieItem from "./movieitem";
 
-const Movies = (props) => { //this is the Movies component that returns the JSX code
+const Movies = (props)=>{ // Functional component called Movies
+    return props.myMovies.map( // Map over the myMovies prop
+        (movie)=>{ 
+            return <MovieItem mymovie={movie} key={movie.imdbID} /> // Pass the movie object as a prop to the MovieItem component
+        }
+    );
+}
 
-  return ( //this is the return statement that returns the JSX code
-    <div>
-      <h1>Movies</h1> {/*//this is the title of the Movies component*/}
-      <Grid container spacing={4}>
-        {props.myMovies.map((movie) => { //this is the map function that maps each movie in the myMovies array to a movie object
-          return ( //this is the return statement that returns the JSX code
-            <Grid item key={movie.imdbID} xs={12} sm={6} md={4}>
-              <Card>
-                <CardMedia
-                  component="img" //this is the component of the Card
-                  height="500"
-                  image={movie.Poster} //this is the Poster of the movie
-                  alt="Movie Poster"
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="div">
-                    {movie.Title}
-                  </Typography> {/*this is the closing Typography component*/}
-                  <Typography variant="body2" color="text.secondary">
-                    {movie.Year}
-                  </Typography> {/*this is the closing Typography component*/}
-                </CardContent>
-              </Card>
-            </Grid> //this is the closing Grid component
-          );
-        })}
-      </Grid>
-    </div>
-  );
-} //this is the closing Movies component
-
-export default Movies; //this exports the Movies component so it can be imported in other files
+export default Movies; // Export the component

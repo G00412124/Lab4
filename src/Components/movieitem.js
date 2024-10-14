@@ -1,28 +1,24 @@
-import React from 'react';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
+import { useEffect } from "react";
+import Card from 'react-bootstrap/Card';
 
-const MovieItem = (props) => { //this is a functional component called MovieItem
+const MovieItem = (props)=> {
+  useEffect(() => {
+    console.log("Movie Item:", props.mymovie);
+  }, [props.mymovie]); // Only run this effect when the mymovie prop changes
+
   return (
-    <Card sx={{ maxWidth: 345, margin: '16px auto' }}> {/*this is the Card component that contains the movie details*/}
-      <CardMedia
-        component="img" //this is the component of the Card
-        height="500" //this is the height of the Card
-        image={props.movie.Poster} //this is the Poster of the movie
-        alt="Movie Poster"
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div"> {/*this is the title of the movie*/}
-          {props.movie.Title}
-        </Typography>
-        <Typography variant="body2" color="text.secondary"> {/*this is the year the movie was released*/}
-          {props.movie.Year}
-        </Typography> {/*this is the closing Typography component*/}
-      </CardContent>
-    </Card> //this is the closing Card component
+    <div>
+      <Card>
+        <Card.Header>{props.mymovie.Title}</Card.Header>  
+        <Card.Body> 
+          <blockquote className="blockquote mb-0"> 
+            <img src={props.mymovie.Poster} alt={props.mymovie.Title} /> 
+            <footer>{props.mymovie.Year}</footer>
+          </blockquote>
+        </Card.Body>
+      </Card>
+    </div>
   );
 }
 
-export default MovieItem; //this exports the MovieItem component so it can be imported in other files
+export default MovieItem;
